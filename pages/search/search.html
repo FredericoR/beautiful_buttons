@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="wcag_blue">
+    <ion-title>Search Page</ion-title>
+    <!-- Buttons to change the font size of the whole content -->
+    <ion-buttons right>
+      <button ion-button (click)="increaseFontSize()">
+        <ion-icon name="add-circle" color="wcag_yellow"></ion-icon> Increase Font
+      </button>
+      <button ion-button (click)="decreaseFontSize()">
+        <ion-icon name="remove-circle" color="wcag_yellow"></ion-icon> Decrease Font
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getSearchResults($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+
+  <ion-list *ngIf="showList">
+    <button ion-item *ngFor="let searchResult of searchResults" [style.font-size.px]="size">
+      {{ searchResult }}
+    </button>
+  </ion-list>
+</ion-content>

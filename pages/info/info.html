@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="wcag_blue">
+    <ion-title>Info</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="increaseFontSize()">
+        <ion-icon name="add-circle" color="wcag_yellow"></ion-icon> Increase Font
+      </button>
+      <button ion-button (click)="decreaseFontSize()">
+        <ion-icon name="remove-circle" color="wcag_yellow"></ion-icon> Decrease Font
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p [style.font-size.px]="size">
+    Please select your preferences from the following list.
+    Your personal selection will then be applied to the navigation.
+  </p>
+<ion-list>
+  <ion-item>
+    <ion-label [style.font-size.px]="size">Stairs</ion-label>
+    <ion-toggle [(ngModel)]="stairs"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label [style.font-size.px]="size">Elevator</ion-label>
+    <ion-toggle [(ngModel)]="elevator"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label [style.font-size.px]="size">Door opener</ion-label>
+    <ion-toggle [(ngModel)]="doorOpener"></ion-toggle>
+  </ion-item>
+</ion-list>
+
+  <button ion-button block icon-end (click)="save()" color="wcag_blue">
+    <div [style.font-size.px]="size"> Save </div>
+    <ion-icon name="checkmark-circle"></ion-icon>
+  </button>
+</ion-content>
