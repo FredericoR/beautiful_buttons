@@ -1,0 +1,29 @@
+<ion-list>
+  <ion-list ion-item horizontal>
+    <p>Text Size</p>
+    <button *ngFor="let size of sizeNames" ion-button round color="light" class="button-font-size"
+     [style.font-size.px]="font.size[size]"
+     (click)="changeTextSize(size)">
+      Aa</button>
+  </ion-list>
+</ion-list>
+
+<ion-list padding>
+  <ion-list-header>Other Options</ion-list-header>
+  <p appAccessible>
+    Please select your preferences from the following list.
+    Your personal selection will then be applied to the navigation.
+  </p>
+  <ion-item>
+    <ion-label appAccessible>Stairs</ion-label>
+    <ion-toggle [(ngModel)]="options.stairs"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label appAccessible>Elevator</ion-label>
+    <ion-toggle [(ngModel)]="options.elevator"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label appAccessible>Door opener</ion-label>
+    <ion-toggle [(ngModel)]="options.doorOpener"></ion-toggle>
+  </ion-item>
+</ion-list>

@@ -1,28 +1,15 @@
-<ion-header>
-  <ion-navbar color="wcag_blue">
-    <ion-title>Home</ion-title>
-
-    <ion-buttons right>
-      <button ion-button (click)="increaseFontSize()">
-        <ion-icon name="add-circle" color="wcag_yellow"></ion-icon> Increase Font
-      </button>
-      <button ion-button (click)="decreaseFontSize()">
-        <ion-icon name="remove-circle" color="wcag_yellow"></ion-icon> Decrease Font
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
+<ion-header><app-header name="Home"></app-header></ion-header>
 
 <ion-content padding>
   <ion-card>
     <ion-card-content>
       <ion-card-title>
-        <div text-left [style.font-size.px]="size">Your indoor navigation app</div>
+        <div text-left appAccessible="title">Your indoor navigation app</div>
       </ion-card-title>
       <!-- ngStyle is adding every text a new size when pushing a button -->
-      <p [style.font-size.px]="size">&#10097; Locate your current position</p>
-      <p [style.font-size.px]="size">&#10097; Navigate anywhere </p>
-      <p [style.font-size.px]="size">&#10097; Set your accessibility preferences</p>
+      <p appAccessible>&#10097; Locate your current position</p>
+      <p appAccessible>&#10097; Navigate anywhere </p>
+      <p appAccessible>&#10097; Set your accessibility preferences</p>
     </ion-card-content>
     <img src="https://snazzy-maps-cdn.azureedge.net/assets/1243-xxxxxxxxxxx.png?v=20170626083204" class="displayed" width="50px" height="150px"/>
   </ion-card>

@@ -1,0 +1,11 @@
+<ion-header><app-header name="Search Page"></app-header></ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getSearchResults($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+
+  <ion-list *ngIf="showList">
+    <button ion-item *ngFor="let searchResult of searchResults" appAccessible>
+      {{ searchResult }}
+    </button>
+  </ion-list>
+</ion-content>

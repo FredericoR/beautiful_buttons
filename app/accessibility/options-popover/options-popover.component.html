@@ -1,0 +1,14 @@
+<span *ngIf="fontSizeButtons">
+  <button  (click)="smallerFont()" ion-button icon-only>
+    <ion-icon name="remove"></ion-icon>
+  </button>
+  <button  (click)="biggerFont()" ion-button icon-only>
+    <ion-icon name="add"></ion-icon>
+  </button>
+</span>
+
+<span *ngIf="showOptionsButton">
+  <button ion-button icon-only round clear (click)="showOptions($event)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</span>

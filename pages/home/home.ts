@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AccessibilityService } from '../../app/accessibility/accessibility.service';
 
 @Component({
   selector: 'page-home',
@@ -7,25 +8,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  size: number = 15;
-  maxSize: number = 19;
-  minSize: number = 15;
-  increment: number = 1;
+  font = this.accessibilityService.font;
+  constructor(
+    public navCtrl: NavController,
+    private accessibilityService: AccessibilityService) {
 
-  someText: string = "I change!";
-
-  constructor(public navCtrl: NavController) {
   }
 
-  increaseFontSize() : void  {
-    console.log("font increased.")
-    if (this.size >= this.maxSize) { return };
-    this.size = this.size + this.increment;
-  };
-
-  decreaseFontSize() : void  {
-    console.log("font decreased.")
-    if (this.size <= this.minSize) { return };
-    this.size = this.size - this.increment;
-  };
 }
